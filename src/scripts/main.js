@@ -3,9 +3,11 @@
 const totalPopulationSpan = document.querySelector('.total-population');
 const averagePopulationSpan = document.querySelector('.average-population');
 const populationSpans = document.querySelectorAll('.population');
-const populationData = [...populationSpans].map((item) => {
-  return Number.parseInt(item.textContent.split(',').join(''));
-});
+const populationData = [...populationSpans]
+  .map((item) => {
+    return Number.parseInt(item.textContent.split(',').join(''));
+  })
+  .filter(Number.isFinite());
 
 const totalPopulation = populationData.reduce((total, value) => {
   return total + value;
