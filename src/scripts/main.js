@@ -7,7 +7,7 @@ const populationData = [...populationSpans]
   .map((item) => {
     return Number.parseInt(item.textContent.split(',').join(''));
   })
-  .filter(Number.isFinite());
+  .filter(Number.isFinite);
 
 const totalPopulation = populationData.reduce((total, value) => {
   return total + value;
